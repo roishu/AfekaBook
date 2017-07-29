@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head >
+  <title>AfekaBook</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+   <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="js/startPage.js"></script>
+</head>
+
+<body ng-app="startPage" id ="indexStartPage">
+
+<div class="container" id="titleIndexContainer"> 
+	<h1 align='center' >Welcome To AfekaBook!</h1>
+</div>
+
+<div ng-controller="loginCtrl"  ng-submit="login()" class="container" id="loginContainer">
+  <h2>Log In</h2>
+  <form role="form">
+    <div class="form-group">
+      <label for="logInEmail">Email:</label>
+      <input ng-model="lemail" type="email" class="form-control" id="logInEmail" placeholder="Enter email" required>
+      <label for="logInPwd">Password:</label>
+      <input ng-model="lpwd" type="password" class="form-control" id="logInPwd" placeholder="Enter password" required>
+    </div>
+    <button type="submit" class="btn btn-default">Log In</button>
+    {{ logInStatus }}
+    </br></br>
+  </form>
+  
+</div>
+
+<!-- <div><line>________________________________________</line></div> -->
+
+<div ng-controller="signupCtrl" class="container" id="signUpContainer" style ='background-color: #ffffff;border-radius: 5px;'>
+
+  <h2>Sign Up</h2>
+  <form name="signupForm" role="form" ng-submit="insertdata()">
+    <div class="form-group">
+    
+      <label for="firstName">First Name:</label>
+      <input ng-model="fname" type="text" class="form-control" id="firstName" placeholder="Enter first name" required>
+      <label for="lastName">Last Name:</label>
+      <input ng-model="lname" type="text" class="form-control" id="lastName" placeholder="Enter last name" required>
+      <label for="birthday">Birthday:</label>
+      <input ng-model="dob" type="date" class="form-control" id="birthday" required>
+      <label for="signUpEmail">Email:</label>
+      <input ng-model="email" type="email" class="form-control" id="signUpEmail" placeholder="Enter email" required>
+      <label for="signUpPwd">Password:</label>
+      <input ng-model="pwd" type="password" class="form-control" id="signUpPwd" placeholder="Enter password" required>
+      <label for="gender">Gender:</label>      	  
+	  <select class="form-control" ng-model="gender" ng-options="item for item in names"> </select>
+  
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+    {{ signUpStatus }}
+    </br></br>
+    
+  </form>
+  
+</div>
+  
+</body>
+</html>
